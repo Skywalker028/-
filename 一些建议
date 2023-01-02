@@ -1,0 +1,27 @@
+关于页面跳转
+小程序5种跳转页面方式的区别：
+//只能跳转到tabBar配置页面
+
+wx.switchTab({
+    url: '/pages/index/index',
+});
+//返回上一级页面（delta：返回的页面数，如果 delta 大于现有页面数，则返回到首页，默认值为1）
+
+wx.navigateBack({
+    delta: 2   //默认值是1
+})
+//关闭当前页面，跳转到应用内的某个页面
+
+wx.redirectTo({
+    url: '/pages/index/index',
+});
+//保留当前页面，跳转到应用内的某个页面
+
+wx.navigateTo({
+    url: '/pages/index/index',
+});
+// 关闭所有页面，打开到应用内的某个页面
+
+wx.reLaunch({
+    url: '/pages/index/index',
+})
